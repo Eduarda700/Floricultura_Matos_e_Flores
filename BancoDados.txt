@@ -136,13 +136,13 @@ FOREIGN KEY (idvenda) REFERENCES venda (idvenda)
 
 );
 
-insert int usuaria_proprietaria
+insert into usuaria_proprietaria
 Values (1,"amora@Matoseflores.com.br","Amora","123");
 
-insert int usuaria_cliente
+insert into usuaria_cliente
 Values (1,"Paula","123","paulaTeste@gmail.com.br","123456789","123123123","2000/03/02","1233211","villa boas","12","apt-a","villa pinheiro","botucatu","são paulo");
 
-insert int usuaria_funcionario
+insert into usuaria_funcionario
 Values (1,"giovanniTeste@gmail.com.br","Giovanni","123");
 
 
