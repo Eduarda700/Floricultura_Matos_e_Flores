@@ -1,0 +1,32 @@
+<?php
+    session_start();
+    include_once("./config/conexao.php");
+    $idusuario_funcionario = $_SESSION['idusuario_funcionario'];
+    $iddica_plantio = $_GET['id'];
+    $sql = "SELECT * FROM tarefa WHERE iddica_plantio = $iddica_plantio AND idusuario_funcionario = $idusuario_funcionario;";
+    $res = mysqli_query($conn, $sql);
+    if(mysqli_affected_rows($conn) == 0){
+        header("location: index.php");
+    }
+    $row = mysqli_fetch_array($res);
+?>
+<h1 align='center'>Dica de Plantio</h1>
+
+<div>
+    <form class="form-login" action="processa_altera_dica.php" method="POST">
+        <input type="hidden" name="iddica_plantio" id="iddica_plantio" value="<?=$row[0];?>">
+        <div class="form-group">
+            <label for="titulo_dica">Título da Dica</label>
+            <input class="form-control" type="text" name="titulo_dica" id="titulo_dica" value="<?=$row[1];?>">
+        </div>
+        <div class="form-group">
+            <label for="conteudo_dica">Conteúdo da Dica</label>
+            <textarea class="form-control" name="conteudo_dica" id="conteudo_dica"><?=$row[2];?></textarea>
+        </div>
+        <br>
+        <button class="btn btn-dark" type="submit">Alterar</button>
+        <button class="btn btn-dark" type="reset">Limpar</button>
+        <button class="btn btn-dark" type="cancel" onclick="javascript:window.location='index.php'">Cancelar</button>
+    </form>
+</div>
+
