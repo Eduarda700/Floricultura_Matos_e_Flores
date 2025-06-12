@@ -135,7 +135,7 @@ FOREIGN KEY (idfornecedor) REFERENCES fornecedor (idfornecedor),
 FOREIGN KEY (idvenda) REFERENCES venda (idvenda)
 
 );
-
+-- usuarios base
 insert into usuario_proprietaria
 Values (1,"amora@Matoseflores.com.br","Amora","123");
 
@@ -145,7 +145,7 @@ Values (1,"Paula","123","paulaTeste@gmail.com.br","123456789","123123123","2000/
 insert into usuario_funcionario
 Values (1,"giovanniTeste@gmail.com.br","Giovanni","123");
 
-
+-- modos de pagamento
 use floricultura;
 insert into modo_de_pagamento 
 values (1,"PIX","...",".."),
@@ -153,6 +153,47 @@ values (1,"PIX","...",".."),
 , (3, "...","...","Dinheiro em especie");
 
 
+-- Fornecedor de flores
+INSERT INTO fornecedor (
+  fornecedor, telefone, email_fornecedor, cnpj_fornecedor,
+  rua_fornecedor, numero_fornecedor, complemento_fornecedor,
+  bairro_fornecedor, cidade_fornecedor, estado_fornecedor, cep_fornecedor
+) VALUES (
+  'Floricultura Bela Flor', '11998765432', 'contato@belaflor.com.br', '12.345.678/0001-90',
+  'Rua das Rosas', '123', 'Sala 2',
+  'Jardim das Flores', 'São Paulo', 'SP', 12345678
+);
+
+-- Fornecedor de potes de barro
+INSERT INTO fornecedor (
+  fornecedor, telefone, email_fornecedor, cnpj_fornecedor,
+  rua_fornecedor, numero_fornecedor, complemento_fornecedor,
+  bairro_fornecedor, cidade_fornecedor, estado_fornecedor, cep_fornecedor
+) VALUES (
+  'Cerâmica Rústica LTDA', '31987654321', 'vendas@ceramicarustica.com.br', '98.765.432/0001-21',
+  'Avenida dos Oleiros', '456', NULL,
+  'Centro', 'Belo Horizonte', 'MG', 30123456
+);
+-- Flores para simular
+INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
+VALUES 
+('Rosa Vermelha', 'FL001', 'Flor clássica e perfumada, ideal para buquês e arranjos românticos.', 50, '12.90', 1);
+
+INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
+VALUES 
+('Orquídea Branca', 'FL002', 'Orquídea elegante e delicada, ótima para ambientes internos.', 30, '29.90', 1);
+
+-- Potes de barro para simularr
+INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
+VALUES 
+('Pote de Barro Pequeno', 'PB001', 'Pote de barro artesanal, ideal para pequenas plantas e suculentas.', 100, '8.50', 2);
+
+INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
+VALUES 
+('Pote de Barro Grande', 'PB002', 'Pote de barro grande, excelente para plantas maiores e decoração rústica.', 40, '18.00', 2);
+
+
+-- para pedidos
 SELECT 
     p.nome_produto AS titulo_produto,
     p.valor_produto,
