@@ -153,6 +153,26 @@ values (1,"PIX","...",".."),
 , (3, "...","...","Dinheiro em especie");
 
 
+SELECT 
+    p.nome_produto AS titulo_produto,
+    p.valor_produto,
+    mp.pix,
+    mp.cartao,
+    mp.dinheiro,
+    uc.rua_cliente,
+    uc.numero_cliente,
+    uc.complemento_cliente,
+    uc.bairro_cliente,
+    uc.cidade_cliente,
+    uc.estado_cliente,
+    uc.cep_cliente,
+    p.descricao_produto
+FROM pedidos_realizados pr
+JOIN produto p ON pr.idproduto = p.idproduto
+JOIN venda v ON pr.idvenda = v.idvenda
+JOIN modo_de_pagamento mp ON v.idmodo_de_pagamento = mp.idmodo_de_pagamento
+JOIN usuario_cliente uc ON v.idusuario_cliente = uc.idusuario_cliente;
+
 
 
 
