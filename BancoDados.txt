@@ -146,6 +146,12 @@ insert into usuario_funcionario
 Values (1,"giovanniTeste@gmail.com.br","Giovanni","123");
 
 
+use floricultura;
+insert into modo_de_pagamento 
+values (1,"PIX","...",".."),
+ (2,"...","Cartão de debito ou credito","..")
+, (3, "...","...","Dinheiro em especie");
+
 
 
 
