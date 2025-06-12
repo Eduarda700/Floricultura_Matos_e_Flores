@@ -183,6 +183,9 @@ INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_pr
 VALUES 
 ('Orquídea Branca', '1002', 'Orquídea elegante e delicada, ótima para ambientes internos.', 30, '29.90', 1);
 
+INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
+VALUES ('lilas roxa', '1003', 'Lilas elegante e delicada, ótima para ambientees neutros.', 5, '22.90', 1);
+
 -- Potes de barro para simularr
 INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_produto, valor_produto, idfornecedor)
 VALUES 
