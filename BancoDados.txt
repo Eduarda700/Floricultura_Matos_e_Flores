@@ -192,6 +192,21 @@ INSERT INTO produto (nome_produto, cod_produto, descricao_produto, quantidade_pr
 VALUES 
 ('Pote de Barro Grande', 'PB002', 'Pote de barro grande, excelente para plantas maiores e decoração rústica.', 40, '18.00', 2);
 
+-- uma dica para aexibição nao fica vazia
+INSERT INTO dicas_plantio (
+  titulo_dica,
+  conteudo_dica,
+  idusuario_proprietaria,
+  idusuario_funcionario
+) VALUES (
+  'Como Plantar Rosas em Casa',
+  'As rosas precisam de bastante luz solar, solo bem drenado e regas regulares. 
+  Plante-as em um local que receba pelo menos 6 horas de sol por dia. 
+  Adicione composto orgânico ao solo e evite encharcar para prevenir fungos. 
+  A poda regular estimula a floração e fortalece a planta.',
+  1, -- Substitua pelo ID válido de um usuário proprietária
+  NULL -- Caso tenha sido inserida por um proprietário
+);
 
 -- para pedidos
 SELECT 
