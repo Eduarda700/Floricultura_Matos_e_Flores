@@ -137,7 +137,7 @@ FOREIGN KEY (idvenda) REFERENCES venda (idvenda)
 );
 -- usuarios base
 insert into usuario_proprietaria
-Values (1,"amora@Matoseflores.com.br","Amora","123");
+Values (1,"Margarida@Matoseflores.com.br","Margarida","123");
 
 insert into usuario_cliente
 Values (1,"Paula","123","paulaTeste@gmail.com.br","123456789","123123123","2000/03/02","1233211","villa boas","12","apt-a","villa pinheiro","botucatu","são paulo");
