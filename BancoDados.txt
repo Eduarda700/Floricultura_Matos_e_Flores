@@ -1,4 +1,3 @@
-
 CREATE DATABASE floricultura;
 
 USE floricultura;
@@ -74,9 +73,7 @@ estado_cliente varchar (100) not null
 
 CREATE TABLE IF NOT EXISTS modo_de_pagamento(
 idmodo_de_pagamento integer primary key auto_increment,
-pix varchar(200) not null,
-cartao varchar (30) not null,
-dinheiro varchar (100) not null
+descricao varchar(200) not null
 
 );
 
@@ -148,9 +145,10 @@ Values (1,"giovanniTeste@gmail.com.br","Giovanni","123");
 -- modos de pagamento
 use floricultura;
 insert into modo_de_pagamento 
-values (1,"PIX","...",".."),
- (2,"...","Cartão de debito ou credito","..")
-, (3, "...","...","Dinheiro em especie");
+values (1,"PIX"),
+ (2,"Cartão de debito"),
+ (3,"Cartão de credito")
+, (4,"Dinheiro em especie");
 
 
 -- Fornecedor de flores
@@ -215,9 +213,7 @@ INSERT INTO dicas_plantio (
 SELECT 
     p.nome_produto AS titulo_produto,
     p.valor_produto,
-    mp.pix,
-    mp.cartao,
-    mp.dinheiro,
+    mp.descricao,
     uc.rua_cliente,
     uc.numero_cliente,
     uc.complemento_cliente,
@@ -246,7 +242,3 @@ VALUES ('2025-06-12', 3, 2, 1, 1, 1);
 
 INSERT INTO venda (data_venda, idmodo_de_pagamento, idproduto, idusuario_funcionario, idusuario_proprietaria, idusuario_cliente)
 VALUES ('2025-06-12', 2, 2, 1, 1, 1);
-
-
-
-
